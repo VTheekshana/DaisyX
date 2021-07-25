@@ -1,4 +1,4 @@
-# Daisyxmusic (Telegram bot project )
+# MrSabermusic (Telegram bot project )
 # Copyright (C) 2021  Inukaasith
 
 # This program is free software: you can redistribute it and/or modify
@@ -112,7 +112,7 @@ async def ytmusic(client, message: Message):
             audio=open(file_stark, "rb"),
             duration=int(ytdl_data["duration"]),
             title=str(ytdl_data["title"]),
-            performer=str(ytdl_data["uploader"]),
+            performer=str(ytdl_data["uploader @MrSaberBot"]),
             thumb=sedlyf,
             caption=capy,
             progress=progress,
@@ -181,7 +181,7 @@ async def jssong(_, message):
         return
     if dl_limit >= 3:
         await message.reply_text(
-            "Daisy's server busy due to too many downloads, try again after sometime."
+            "Saber's server busy due to too many downloads, try again after sometime."
         )
         return
     if is_downloading:
@@ -247,7 +247,7 @@ async def deezsong(_, message):
         artist = songs.result[0].artist
         await m.edit("Downloading")
         song = await download_song(url)
-        await m.edit("Uploading")
+        await m.edit("Uploading @MrSaberBot")
         await message.reply_audio(audio=song, title=title, performer=artist)
         os.remove(song)
         await m.delete()
@@ -269,7 +269,7 @@ async def ytmusic(client, message: Message):
     global dl_limit
     if dl_limit >= 4:
         await message.reply_text(
-            "Daisy s server busy due to too many downloads, try again after sometime."
+            "MrSaberBot s server busy due to too many downloads, try again after sometime."
         )
         return
     urlissed = get_text(message)
